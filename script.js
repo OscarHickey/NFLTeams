@@ -1,26 +1,3 @@
-var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/main/Sports/NHL%20Teams.csv"
-var Conference = getColumn(url,1);
-var Divisions = getColumn(url,2);
-var Teams = getColumn(url,3);
-var City = getColumn(url,4);
-var Arena = getColumn(url,5);
-var Capacity = getColumn(url,6);
-var Joined = getColumn(url,7);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function getColumn(url, columnNumber){
     var column = [];
     var table = [];
@@ -44,3 +21,11 @@ function getColumn(url, columnNumber){
     return column;
 }
 
+var url = "https:raw.githubusercontent.com/b-mcavoy/datasets/main/Sports/NFL%20Teams.csv"
+var Conference = getColumn(url,1);
+var Divisions = getColumn(url,2);
+var Teams = getColumn(url,3);
+var City = getColumn(url,4);
+var Arena = getColumn(url,5);
+var Capacity = getColumn(url,6);
+var Coach = getColumn(url,7);
