@@ -29,4 +29,21 @@ var City = getColumn(url,4);
 var Arena = getColumn(url,5);
 var Capacity = getColumn(url,6);
 var Coach = getColumn(url,7);
-console.log()
+
+function getCapacity(division){
+  var total= 0;
+  for(var i = 0; i < Divisions.length; i++){
+      if(Divisions[i].toLowerCase() == division.toLowerCase()){
+          total += parseFloat(Capacity[i]); 
+      }
+  }
+  if(total == 0){
+      return -1;
+  }  
+  return total;
+}
+console.log(getCapacity("East"));
+console.log(getCapacity("South"));
+console.log(getCapacity("West"));
+console.log(getCapacity("North"));
+j
