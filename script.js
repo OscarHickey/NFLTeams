@@ -18,11 +18,17 @@ function getCoaches(coach){
       matches.push(Coach[i])
   }
   }
+  if(matches.length > 0){
+    return matches;
+  } 
+  else{
+    matches.push("That coach doesn't exist")
+ 
+  }
   return matches;
-}
+  }
 
-
-//console.log(getCoaches("q"))
+//console.log(getCoaches("ORE"))
 
 //Purpose is to find any NFL coach using one letter or a whole name 
 
@@ -52,7 +58,7 @@ function getCapacity(division){
   }  
   return total;
 }
-//console.log(getCapacity("East"));
+//console.log(getCapacity("South"));
 //console.log(getCapacity("South"));
 //console.log(getCapacity("West"));
 //console.log(getCapacity("North"));
@@ -67,10 +73,17 @@ function getCity(city){
       matches.push(City[i])
    }
    }
+   if(matches.length > 0){
+    return matches;
+  } 
+  else{
+    matches.push("That stadium doesn't exist")
+ 
+  }
    return matches;
 }
 
-//console.log(getCity("Lambeau"));
+//console.log(getCity("gil"));
 
 function getArena(arena){
    var matches = [];
@@ -79,10 +92,17 @@ function getArena(arena){
       matches.push(Arena[i])
     }
   }
+  if(matches.length > 0){
+    return matches;
+  } 
+  else{
+    matches.push("That coach doesn't exist")
+ 
+  }
   return matches;
 }
 
-//console.log(getArena("b"));
+console.log(getArena("billy"));
 
 function getColumn(url, columnNumber){
     var column = [];
@@ -106,6 +126,3 @@ function getColumn(url, columnNumber){
     }
     return column;
 }
-
-
-
