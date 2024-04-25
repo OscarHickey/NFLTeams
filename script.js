@@ -73,7 +73,8 @@ function getCity(city){
 //console.log(getCity("Lambeau"));
 
 function getArena(arena){
-  for(var i =0; i < City.length; i++){
+   var matches = [];
+  for(var i = 0; i < City.length; i++){
     if(Coach[i].toLowerCase().includes(arena.toLowerCase())){
       matches.push(Arena[i])
     }
@@ -81,7 +82,7 @@ function getArena(arena){
   return matches;
 }
 
-console.log(getArena("Shanna"));
+//console.log(getArena("b"));
 
 function getColumn(url, columnNumber){
     var column = [];
@@ -105,3 +106,6 @@ function getColumn(url, columnNumber){
     }
     return column;
 }
+
+
+
