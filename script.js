@@ -7,8 +7,6 @@ var Arena = getColumn(url,5);
 var Capacity = getColumn(url,6);
 var Coach = getColumn(url,7);
 
-
-
 //Coaches that names start with a letter
 
 
@@ -61,6 +59,30 @@ function getCapacity(division){
 
 //Gives highest capacity for biggest stadium in Divisions
 
+function getCity(city){
+    var matches = [];
+  
+ for(var i = 0; i < City.length; i++){
+ if(Arena[i].toLowerCase().includes(city.toLowerCase())){
+      matches.push(City[i])
+   }
+   }
+   return matches;
+}
+
+//console.log(getCity("Lambeau"));
+
+function getArena(arena){
+  for(var i =0; i < City.length; i++){
+    if(Coach[i].toLowerCase().includes(arena.toLowerCase())){
+      matches.push(Arena[i])
+    }
+  }
+  return matches;
+}
+
+console.log(getArena("Shanna"));
+
 function getColumn(url, columnNumber){
     var column = [];
     var table = [];
@@ -83,7 +105,3 @@ function getColumn(url, columnNumber){
     }
     return column;
 }
-
-
-
-
