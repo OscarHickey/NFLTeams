@@ -61,14 +61,6 @@ function getCapacity(division){
 
 //Gives highest capacity for biggest stadium in Divisions
 
-
-
-
-
-
-
-
-
 function getColumn(url, columnNumber){
     var column = [];
     var table = [];
