@@ -7,14 +7,12 @@ var Arena = getColumn(url,5);
 var Capacity = getColumn(url,6);
 var Coach = getColumn(url,7);
 
-//Coaches that names start with a letter
 
-
-function getCoaches(coach){
+function getCoaches(coach){ //Purpose is to find any NFL coach using one letter or a whole name 
   var matches = [];
   
   for(var i = 0; i < Coach.length; i++){
-    if(Coach[i].toLowerCase().includes(coach.toLowerCase())){
+    if(Coach[i].toLowerCase().includes(coach.toLowerCase())){ //We used .toLowerCase so that you don't have to write the inputs perfectly and you can even just write a letter.
       matches.push(Coach[i])
   }
   }
@@ -30,46 +28,52 @@ function getCoaches(coach){
 
 //console.log(getCoaches("ORE"))
 
-//Purpose is to find any NFL coach using one letter or a whole name 
 
 function getCoachesteam(team){
   var matches = [];
   
   for(var i = 0; i < Coach.length; i++){
-    if(Coach[i].toLowerCase().includes(team.toLowerCase())){
+    if(Coach[i].toLowerCase().includes(team.toLowerCase())){ //We used .toLowerCase so that you don't have to write the inputs perfectly and you can even just write a letter.
       matches.push(Teams[i])
   }
   }
+  if(matches.length > 0){
+    return matches;
+  } 
+  else{
+    matches.push("That coach doesn't exist") //This is for when there are no matches available.
+ 
+  }
   return matches;
 }
-//console.log(getCoachesteam("Kyle shanahan"));
+//console.log(getCoachesteam("Khanahan"));
 
 //Purpose is to find the team of an inputted head coach. 
 
-function getCapacity(division){
+function getCapacity(division){ //This function adds the capacities of all the stadiums together from each individual division.
   var total= 0;
   for(var i = 0; i < Divisions.length; i++){
-      if(Divisions[i].toLowerCase() == division.toLowerCase()){
+      if(Divisions[i].toLowerCase() == division.toLowerCase()){ //We used .toLowerCase so that you don't have to write the inputs perfectly and you can even just write a letter.
           total += parseFloat(Capacity[i]); 
       }
   }
-  if(total == 0){
+  if(total == 0){ //If the input is not right it will print -1
       return -1;
   }  
   return total;
 }
-//console.log(getCapacity("South"));
+//console.log(getCapacity("East"));
 //console.log(getCapacity("South"));
 //console.log(getCapacity("West"));
 //console.log(getCapacity("North"));
 
-//Gives highest capacity for biggest stadium in Divisions
 
-function getCity(city){
+
+function getArena(city){ //This function assigns a city to an inputted arena. Uses city as a parameter
     var matches = [];
   
  for(var i = 0; i < City.length; i++){
- if(Arena[i].toLowerCase().includes(city.toLowerCase())){
+ if(Arena[i].toLowerCase().includes(city.toLowerCase())){//We used .toLowerCase so that you don't have to write the inputs perfectly and you can even just write a letter.
       matches.push(City[i])
    }
    }
@@ -77,32 +81,32 @@ function getCity(city){
     return matches;
   } 
   else{
-    matches.push("That stadium doesn't exist")
+    matches.push("That stadium doesn't exist") //This is for when there are no matches available.
  
   }
    return matches;
 }
 
-//console.log(getCity("gil"));
+//console.log(getArena("gil"));
 
-function getArena(arena){
+function getCoachesArena(arena){ //This function assigns an arena to an inputted coach. It also uses arena as a parameter.
    var matches = [];
   for(var i = 0; i < City.length; i++){
-    if(Coach[i].toLowerCase().includes(arena.toLowerCase())){
-      matches.push(Arena[i])
+    if(Coach[i].toLowerCase().includes(arena.toLowerCase())){  //this loops through all of the options. We used .toLowerCase so that you don't have to write the inputs perfectly and you can even just write a letter.
+      matches.push(Arena[i]) 
     }
   }
   if(matches.length > 0){
     return matches;
   } 
   else{
-    matches.push("That coach doesn't exist")
+    matches.push("That coach doesn't exist")  //This is for when there are no matches available.
  
   }
   return matches;
 }
 
-console.log(getArena("billy"));
+//console.log(getCoachesArena("bill b"));
 
 function getColumn(url, columnNumber){
     var column = [];
